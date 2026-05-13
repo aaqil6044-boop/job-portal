@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect("mongodb+srv://admin:admin123@cluster0.4te56ld.mongodb.net/jobportal?retryWrites=true&w=majority");
 
 // Job Schema
 const Job = mongoose.model("Job", {
