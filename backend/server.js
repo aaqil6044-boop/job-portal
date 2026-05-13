@@ -28,15 +28,12 @@ app.post('/addJob', async (req, res) => {
   res.send("Job Added");
 });
 
-app.get('/jobs', async (req, res) => {
-  const jobs = await Job.find();
-  res.json(jobs);
+app.get("/", (req, res) => {
+  res.send("Job Portal Backend Running Successfully");
 });
 
-app.post('/apply', async (req, res) => {
-  const data = new Application(req.body);
-  await data.save();
-  res.send("Applied");
-});
+const PORT = process.env.PORT || 5000;
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
