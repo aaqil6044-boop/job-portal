@@ -163,7 +163,7 @@ async function addJob() {
   const company = document.getElementById('company').value;
   const salary = document.getElementById('salary').value;
 
-  await fetch('http://localhost:5000/addJob', {
+  await fetch('https://job-portal-bqgu.onrender.com/addJob', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -184,7 +184,7 @@ async function addJob() {
 
 async function loadJobs() {
 
-  const res = await fetch('http://localhost:5000/jobs');
+  const res = await fetch('https://job-portal-bqgu.onrender.com/jobs');
 
   const jobs = await res.json();
 
@@ -220,7 +220,7 @@ async function applyJob(id) {
 
   const email = prompt("Enter your email");
 
-  await fetch('http://localhost:5000/apply', {
+  await fetch('https://job-portal-bqgu.onrender.com/apply', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
