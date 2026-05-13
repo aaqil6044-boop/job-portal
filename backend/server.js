@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -22,12 +23,27 @@ const Application = mongoose.model("Application", {
   jobId: String
 });
 
+// Add Job
 app.post('/addJob', async (req, res) => {
   const job = new Job(req.body);
   await job.save();
   res.send("Job Added");
 });
 
+// Get Jobs
+app.get('/jobs', async (req, res) => {
+  const jobs = await Job.find();
+  res.json(jobs);
+});
+
+// Apply Job
+app.post('/apply', async (req, res) => {
+  const data = new Application(req.body);
+  await data.save();
+  res.send("Applied Successfully");
+});
+
+// Home Route
 app.get("/", (req, res) => {
   res.send("Job Portal Backend Running Successfully");
 });
