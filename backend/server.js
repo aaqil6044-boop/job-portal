@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/jobportal");
+mongoose.connect(process.env.MONGO_URL);
 
 // Job Schema
 const Job = mongoose.model("Job", {
