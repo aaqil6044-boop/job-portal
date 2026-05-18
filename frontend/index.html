@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,11 +14,11 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#0f172a,#1e293b);
+    background:linear-gradient(135deg,#0f172a,#1e293b);
     min-height:100vh;
     color:white;
     padding:40px;
@@ -27,17 +29,56 @@ body{
     margin:auto;
 }
 
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:40px;
+
+    background:rgba(255,255,255,0.06);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
 .title{
     text-align:center;
-    font-size:55px;
-    margin-bottom:10px;
+    font-size:60px;
     color:#38bdf8;
+    margin-bottom:10px;
 }
 
 .subtitle{
     text-align:center;
-    margin-bottom:40px;
     color:#cbd5e1;
+    margin-bottom:40px;
 }
 
 .top-box{
@@ -49,11 +90,16 @@ body{
 
 .form-box,
 .stats-box{
+
     background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.1);
+
     border-radius:20px;
+
     padding:25px;
-    backdrop-filter: blur(10px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(10px);
 }
 
 .form-box h2,
@@ -72,8 +118,8 @@ input{
     padding:15px;
     border:none;
     border-radius:12px;
-    font-size:16px;
     outline:none;
+    font-size:16px;
 }
 
 button{
@@ -91,6 +137,12 @@ button{
 button:hover{
     transform:scale(1.03);
     background:white;
+}
+
+.stats{
+    font-size:22px;
+    margin-top:20px;
+    color:#22c55e;
 }
 
 .search-box{
@@ -114,10 +166,15 @@ button:hover{
 }
 
 .job-card{
+
     background:rgba(255,255,255,0.06);
+
     border-radius:20px;
+
     padding:25px;
+
     border:1px solid rgba(255,255,255,0.08);
+
     transition:0.3s;
 }
 
@@ -144,20 +201,22 @@ button:hover{
 }
 
 .badge{
-    display:inline-block;
-    background:#22c55e;
-    color:black;
-    padding:6px 12px;
-    border-radius:30px;
-    font-size:14px;
-    margin-bottom:15px;
-    font-weight:bold;
-}
 
-.stats{
-    font-size:22px;
-    margin-top:20px;
-    color:#22c55e;
+    display:inline-block;
+
+    background:#22c55e;
+
+    color:black;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    margin-bottom:15px;
+
+    font-weight:bold;
 }
 
 .footer{
@@ -166,85 +225,125 @@ button:hover{
     color:#94a3b8;
 }
 
+.delete-btn{
+    background:#ef4444;
+    margin-top:10px;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
 @media(max-width:800px){
 
     .top-box{
         grid-template-columns:1fr;
     }
 
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1 class="title">Modern Job Portal</h1>
+<nav class="navbar">
 
-    <p class="subtitle">
-        Find your dream job instantly 🚀
-    </p>
+    <div class="logo">
+        JobPortal 🚀
+    </div>
 
-    <div class="top-box">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
-        <div class="form-box">
+</nav>
 
-            <h2>Add New Job</h2>
+<h1 class="title">
+    Modern Job Portal
+</h1>
 
-            <div class="input-group">
+<p class="subtitle">
+    Find your dream job instantly 🚀
+</p>
 
-                <input type="text" id="title" placeholder="Job Title">
+<div class="top-box">
 
-                <input type="text" id="company" placeholder="Company Name">
+    <div class="form-box">
 
-                <input type="text" id="salary" placeholder="Salary Package">
+        <h2>Add New Job</h2>
 
-                <button onclick="addJob()">
-                    Add Job
-                </button>
+        <div class="input-group">
 
-            </div>
+            <input type="text" id="title" placeholder="Job Title">
 
-        </div>
+            <input type="text" id="company" placeholder="Company Name">
 
-        <div class="stats-box">
+            <input type="text" id="salary" placeholder="Salary Package">
 
-            <h2>Portal Statistics</h2>
-
-            <div class="stats">
-                Total Jobs:
-                <span id="jobCount">0</span>
-            </div>
-
-            <div class="stats">
-                Status:
-                Online ✅
-            </div>
-
-            <div class="stats">
-                Database:
-                Connected 🔥
-            </div>
+            <button onclick="addJob()">
+                Add Job
+            </button>
 
         </div>
 
     </div>
 
-    <div class="search-box">
-        <input type="text" id="search" placeholder="Search jobs..." onkeyup="searchJobs()">
+    <div class="stats-box">
+
+        <h2>Portal Statistics</h2>
+
+        <div class="stats">
+            Total Jobs:
+            <span id="jobCount">0</span>
+        </div>
+
+        <div class="stats">
+            Status:
+            Online ✅
+        </div>
+
+        <div class="stats">
+            Database:
+            Connected 🔥
+        </div>
+
     </div>
 
-    <h2 class="jobs-title">
-        Available Jobs
-    </h2>
+</div>
 
-    <div id="jobs"></div>
+<div class="search-box">
 
-    <div class="footer">
-        Developed using HTML, CSS, JavaScript, Node.js, Express.js and MongoDB
-    </div>
+    <input
+        type="text"
+        id="search"
+        placeholder="Search jobs..."
+        onkeyup="searchJobs()"
+    >
+
+</div>
+
+<h2 class="jobs-title">
+    Available Jobs
+</h2>
+
+<div id="jobs"></div>
+
+<div class="footer">
+
+    Developed using HTML, CSS, JavaScript, Node.js, Express.js and MongoDB
+
+</div>
 
 </div>
 
@@ -255,11 +354,15 @@ let allJobs = [];
 async function addJob(){
 
     const title = document.getElementById('title').value;
+
     const company = document.getElementById('company').value;
+
     const salary = document.getElementById('salary').value;
 
     if(!title || !company || !salary){
+
         alert("Please fill all fields");
+
         return;
     }
 
@@ -330,10 +433,16 @@ function displayJobs(jobs){
                 Apply Now
             </button>
 
+            <button
+                class="delete-btn"
+                onclick="deleteJob('${job._id}')"
+            >
+                Delete Job
+            </button>
+
         </div>
 
         `;
-
     });
 
     document.getElementById('jobs').innerHTML = html;
@@ -341,7 +450,8 @@ function displayJobs(jobs){
 
 function searchJobs(){
 
-    const search = document.getElementById('search').value.toLowerCase();
+    const search =
+    document.getElementById('search').value.toLowerCase();
 
     const filtered = allJobs.filter(job =>
 
@@ -381,6 +491,19 @@ async function applyJob(id){
     });
 
     alert("Applied Successfully 🚀");
+}
+
+async function deleteJob(id){
+
+    await fetch(`https://job-portal-bqgu.onrender.com/deleteJob/${id}`,{
+
+        method:'DELETE'
+
+    });
+
+    alert("Job Deleted");
+
+    loadJobs();
 }
 
 loadJobs();
