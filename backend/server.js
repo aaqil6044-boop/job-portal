@@ -44,8 +44,12 @@ app.post('/apply', async (req, res) => {
 });
 
 // Home Route
-app.get("/", (req, res) => {
-  res.send("Job Portal Backend Running Successfully");
+app.get('/applications', async (req, res) => {
+
+    const apps = await Application.find();
+
+    res.json(apps);
+
 });
 
 const PORT = process.env.PORT || 5000;

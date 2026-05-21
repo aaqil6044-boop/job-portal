@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recruiter Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    min-height:100vh;
+    padding:40px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:40px;
+
+    background:rgba(255,255,255,0.06);
+
+    padding:20px;
+
+    border-radius:20px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:50px;
+    color:#38bdf8;
+}
+
+#applications{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.card{
+
+    background:rgba(255,255,255,0.06);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.card p{
+    margin-bottom:12px;
+    color:#e2e8f0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<nav class="navbar">
+
+<div class="logo">
+Recruiter Panel 👨‍💼
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="recruiter.html">Recruiter</a>
+
+</div>
+
+</nav>
+
+<h1 class="title">
+Applications Dashboard
+</h1>
+
+<div id="applications"></div>
+
+</div>
+
+<script>
+
+async function loadApplications(){
+
+    const res =
+    await fetch('https://job-portal-bqgu.onrender.com/applications');
+
+    const data = await res.json();
+
+    let html = "";
+
+    data.forEach(app => {
+
+        html += `
+
+        <div class="card">
+
+            <h3>Applicant Details</h3>
+
+            <p>
+            <strong>Name:</strong>
+            ${app.name}
+            </p>
+
+            <p>
+            <strong>Email:</strong>
+            ${app.email}
+            </p>
+
+            <p>
+            <strong>Job ID:</strong>
+            ${app.jobId}
+            </p>
+
+        </div>
+
+        `;
+    });
+
+    document.getElementById('applications').innerHTML = html;
+}
+
+loadApplications();
+
+</script>
+
+</body>
+
+</html>
