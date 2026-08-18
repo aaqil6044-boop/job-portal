@@ -1,32 +1,27 @@
 # Job Portal
 
-A web-based job portal project designed to connect job seekers and recruiters through a simple recruitment platform.
+A web-based job portal developed as a full-stack web development project, with separate frontend and backend components for job seekers and recruiters.
 
 ## Overview
 
-This project was developed as a full-stack web development project with separate frontend and backend components.
+This project provides a simple platform for managing and interacting with job listings.
 
-The application provides functionality for users to interact with job listings and includes features for recruiters to manage recruitment-related activities through a dedicated dashboard.
+The frontend is built using HTML and JavaScript, while the backend uses Node.js and Express.js. MongoDB is used as the database with Mongoose for database interaction.
+
+The project also includes a dedicated recruiter dashboard for recruitment-related activities.
 
 ## Features
 
 - Job portal interface
-- Job listing functionality
-- Separate frontend and backend
+- Job listings
 - Recruiter dashboard
-- Recruitment management features
-- Web-based user interface
+- Separate frontend and backend
+- Backend API using Express.js
+- MongoDB database integration
+- Mongoose-based database interaction
+- CORS support
 
-## Project Structure
-
-```text
-job-portal/
-├── frontend/
-├── backend/
-├── .vscode/
-└── MAD ASSIGNMENT.code-workspace
-
-## Technologies
+## Tech Stack
 
 ### Frontend
 - HTML
@@ -42,3 +37,21 @@ job-portal/
 
 ### Other
 - CORS
+
+## Project Structure
+
+```text
+job-portal/
+│
+├── backend/
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── frontend/
+│   ├── index.html
+│   └── recruiter.html
+│
+├── .vscode/
+├── README.md
+└── MAD ASSIGNMENT.code-workspace
