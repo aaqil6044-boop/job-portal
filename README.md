@@ -25,3 +25,20 @@ job-portal/
 ├── backend/
 ├── .vscode/
 └── MAD ASSIGNMENT.code-workspace
+
+## Technologies
+
+### Frontend
+- HTML
+- JavaScript
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB
+- Mongoose
+
+### Other
+- CORS
